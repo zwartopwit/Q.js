@@ -1,8 +1,8 @@
-= Q.js v0.1.0
+# Q.js v0.1.0
 
 Qutensil - Javascript Toolset for Prototype
 
-== Description
+## Description
 
 Q.js is a toolset built on the prototype.js and scriptaculous libraries.
 It features a growl-like user messaging system, color picker (based on raphael),
@@ -12,11 +12,11 @@ inside the Q.Base class.
 
 Check http://qutensil.com for demos and usage details.
 
-== Donate
+## Donate
 
 PLEASE DONATE TO SUPPORT DEVELOPMENT.
 
-== Licenses
+## Licenses
 
 Q.js 0.1.0 - http://qutensil.com
 
@@ -34,7 +34,7 @@ furnished to do so, subject to the following conditions:
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 
-== Warranty
+## Warranty
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
