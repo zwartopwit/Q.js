@@ -1,6 +1,6 @@
 # Q.js v0.1.0
 
-Qutensil - Javascript Toolset for Prototype
+Qutensil - Lightweight Javascript Toolset for Prototype
 
 ## Description
 
