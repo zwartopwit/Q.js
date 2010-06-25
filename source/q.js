@@ -1,5 +1,5 @@
 /*
- * Q.js 0.1.0
+ * Q.js 0.1.1
  *
  * Copyright (c) 2010 Boys Abroad (Wout Fierens)
  *
@@ -320,10 +320,17 @@ var Q = {
       case "textarea":
         var cssClass;
         
-        border: '1px solid #ccc'
+        this.addCss(
+          'div.q-textarea-wrapper',
+          'position: relative;');
+        
         this.addCss(
           'div.q-textarea-wrapper iframe',
-          'border: 1px solid #ccc');
+          'border: 1px solid #ccc;');
+        
+        this.addCss(
+          'div.q-textarea-wrapper textarea',
+          'border:1px solid #ccc; resize:none; position:relative !important; top:auto; left:auto; right:auto; bottom:auto;');
         
         this.addCss(
           "ul.q-textarea-toolbar",

@@ -1,6 +1,6 @@
-# Q.js v0.1.0
+# Q.js v0.1.1
 
-Qutensil - Lightweight Javascript Toolset for Prototype
+Qutensil - Javascript Toolset for Prototype
 
 ## Description
 
@@ -18,7 +18,7 @@ PLEASE DONATE TO SUPPORT DEVELOPMENT.
 
 ## Licenses
 
-Q.js 0.1.0 - http://qutensil.com
+Q.js 0.1.1 - http://qutensil.com
 
 Licensed under the MIT (http://creativecommons.org/licenses/MIT/) license.
 

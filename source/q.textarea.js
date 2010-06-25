@@ -1,5 +1,5 @@
 /*
- * Q.Textarea 0.1.0
+ * Q.Textarea 0.1.1
  *
  * Copyright (c) 2010 Boys Abroad (Wout Fierens)
  *
@@ -54,7 +54,7 @@ Q.Textarea = Class.create({
     
     // set some static vars
     this.toolbarButtons = {};
-    this.active = true;
+    this.active   = true;
     
     this.oldCaret = false;
     this.codearea = oldarea.cloneNode(true);
@@ -68,7 +68,15 @@ Q.Textarea = Class.create({
     // add a classname to the holder and gice it the correct width
     this.holder.
       addClassName('q-textarea-wrapper').
-      setStyle({ width: width + 'px' });
+      setStyle({ width: width + 'px' }).
+      hide();
+    
+    if (oldarea.className)
+      this.holder.addClassName(oldarea.className);
+    
+    this.holder.id    = oldarea.id;
+    oldarea.id        = '';
+    this.codearea.id  = '';
     
     // insert the iframe in the holder
     this.holder.insert(this.editor);
@@ -77,10 +85,8 @@ Q.Textarea = Class.create({
     this.codearea.
       hide().
       setStyle({
-        resize: 'none',
         width:  (width  - diffDim.width)  + 'px',
-        height: (height - diffDim.height) + 'px',
-        border: '1px solid #ccc'
+        height: (height - diffDim.height) + 'px'
       });
     
     // insert the new area before the editor
@@ -230,22 +236,24 @@ Q.Textarea = Class.create({
               this.toggleToolbarState();
             break;
             case 'Heading':
-              var observeBlur, offset;
-              
-              // close the heading select if anywhere is clicked in the document
-              observeBlur = function() {
-                headingSelect.hide();
-                document.stopObserving('mouseup', observeBlur);
-              }
-              document.observe('mouseup', observeBlur);
-              
-              offset = li.positionedOffset();
-              
-              Q.addCss(
-                'ul.q-textarea-toolbar li.q-heading-select',
-                'left:' + offset.left + 'px; top:' + offset.top + 'px;');
+              if (this.active) {
+                var observeBlur, offset;
 
-              headingSelect.show();
+                // close the heading select if anywhere is clicked in the document
+                observeBlur = function() {
+                  headingSelect.hide();
+                  document.stopObserving('mouseup', observeBlur);
+                }
+                document.observe('mouseup', observeBlur);
+
+                offset = li.positionedOffset();
+
+                Q.addCss(
+                  'ul.q-textarea-toolbar li.q-heading-select',
+                  'left:' + offset.left + 'px; top:' + offset.top + 'px;');
+
+                headingSelect.show();
+              }
             break;
             case 'ForeColor':
               // do nothing
@@ -318,6 +326,8 @@ Q.Textarea = Class.create({
       
       if (this.options.css)
         this.addCss(this.options.css);
+      
+      this.holder.appear({ duration: 0.2 });
 
       Q.callback('onLoad', this);
       

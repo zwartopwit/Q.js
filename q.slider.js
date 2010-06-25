@@ -1,5 +1,5 @@
 /*
- * Q.Slider 0.1.0
+ * Q.Slider 0.1.1
  *
  * Copyright (c) 2010 Boys Abroad (Wout Fierens)
  *
